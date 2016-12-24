@@ -1,0 +1,461 @@
+{
+  "info": {
+    "name": "student",
+    "_postman_id": "05ac98db-91a9-f6ab-e78c-0a04a56c9f29",
+    "description": "All requests that a logged in student has access to",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "97c1ffd9-6efd-2519-e547-f8b6e1477aee",
+      "name": "planner:getinitdata",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+              "",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "tests[\"Body matches string\"] = responseBody.has(\"campus\");",
+              "",
+              "response_fields = [\"username\", \"first_name\" , \"last_name\", \"default_campus\", \"default_programs\", \"current_semester\", \"nearest_date\"",
+              ", \"units_range\", \"logical_years\", \"logical_years\", \"role\", \"department\", \"all_semesters\", \"current_year\", \"all_campuses\"]",
+              "tests[\"Has response fields\"] = true",
+              "for(var i=0, len=response_fields.length; i < len; i++){",
+              "    if (!responseBody.has(response_fields[i])) {",
+              "        tests [\"list\"] = false ",
+              "    }",
+              "}",
+              "",
+              "",
+              "",
+              "var data = JSON.parse(responseBody);",
+              "tests[\"role\"] = data.role === \"student\";"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "http://127.0.0.1:8001/planner/getinitdata/",
+        "method": "GET",
+        "body": {
+          "mode": "formdata"
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "id": "035487fe-e40e-f76d-5d93-ab3c158612b0",
+          "name": "selma get init data",
+          "originalRequest": {
+            "url": "http://127.0.0.1:8001/planner/getinitdata/",
+            "method": "GET",
+            "body": {
+              "mode": "formdata"
+            },
+            "description": ""
+          },
+          "status": "OK",
+          "code": "200",
+          "_postman_previewlanguage": "javascript",
+          "_postman_previewtype": "html",
+          "header": [
+            {
+              "name": "Content-Type",
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": ""
+            },
+            {
+              "name": "Date",
+              "key": "Date",
+              "value": "Thu, 02 Jul 2015 16:15:02 GMT",
+              "description": ""
+            },
+            {
+              "name": "Server",
+              "key": "Server",
+              "value": "WSGIServer/0.1 Python/2.7.6",
+              "description": ""
+            },
+            {
+              "name": "Vary",
+              "key": "Vary",
+              "value": "Cookie",
+              "description": ""
+            },
+            {
+              "name": "X-Frame-Options",
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN",
+              "description": ""
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/planner/getinitdata",
+              "secure": "false",
+              "session": "true",
+              "value": "GA1.4.1697518181.143<br/>2461323",
+              "key": "_ga"
+            },
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/planner/getinitdata",
+              "secure": "false",
+              "session": "true",
+              "value": "R670ZjJwmCfgd9PDmvEx<br/>trA4nWBxwbkV",
+              "key": "csrftoken"
+            },
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/planner/getinitdata",
+              "secure": "false",
+              "session": "true",
+              "value": "znsbjvm5skopqvl7fl2e<br/>2y8e9xiloryd",
+              "key": "sessionid"
+            },
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/planner",
+              "secure": "false",
+              "session": "true",
+              "value": "GA1.4.1697518181.143<br/>2461323",
+              "key": "_ga"
+            },
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/planner",
+              "secure": "false",
+              "session": "true",
+              "value": "s8s1A7miyvp5HC5kPB5i<br/>vPxnH12IH7t4",
+              "key": "csrftoken"
+            },
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/planner",
+              "secure": "false",
+              "session": "true",
+              "value": "1p5q9079mdxt3m0z626m<br/>7u6lpjb9c707",
+              "key": "sessionid"
+            },
+            {
+              "expires": "Thu Jun 30 2016 08:03:50 GMT+0000 (UTC)",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/",
+              "secure": "false",
+              "session": "false",
+              "value": "7znf2eHEFlNFlZagz2dE<br/>W3GzrMH58kAF",
+              "key": "csrftoken"
+            },
+            {
+              "expires": "Thu Jul 16 2015 08:03:50 GMT+0000 (UTC)",
+              "hostOnly": "true",
+              "httpOnly": "true",
+              "domain": "127.0.0.1",
+              "path": "/",
+              "secure": "false",
+              "session": "false",
+              "value": "w2dfz6sabb998z2oyxc1<br/>9kd42hav7fc6",
+              "key": "sessionid"
+            },
+            {
+              "expires": "Sat Jul 01 2017 11:37:51 GMT+0000 (UTC)",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/",
+              "secure": "false",
+              "session": "false",
+              "value": "GA1.1.1697518181.143<br/>2461323",
+              "key": "_ga"
+            },
+            {
+              "expires": "Sat Jul 01 2017 11:38:03 GMT+0000 (UTC)",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/",
+              "secure": "false",
+              "session": "false",
+              "value": "96992031.1697518181.<br/>1432461323.143583708<br/>4.1435837084.1",
+              "key": "__utma"
+            },
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/",
+              "secure": "false",
+              "session": "true",
+              "value": "96992031",
+              "key": "__utmc"
+            },
+            {
+              "expires": "Thu Dec 31 2015 23:38:03 GMT+0000 (UTC)",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/",
+              "secure": "false",
+              "session": "false",
+              "value": "96992031.1435837084.<br/>1.1.utmcsr=(direct)|<br/>utmccn=(direct)|utmc<br/>md=(none)",
+              "key": "__utmz"
+            }
+          ],
+          "responseTime": "86",
+          "body": "{\"username\": \"selmal\", \"first_name\": \"Selma\", \"default_campus\": 1, \"default_programs\": null, \"current_semester\": 2, \"nearest_date\": {\"text\": \"Examinations\", \"end_date\": null, \"full_date\": \"2016-06-28\"}, \"units_range\": [1, 12], \"logical_years\": {\"1\": \"Freshman\", \"2\": \"Sophomore\", \"3\": \"Junior\", \"4\": \"Senior\", \"5\": \"Fifth Year\"}, \"last_name\": \"Limam Mansar\", \"role\": \"advisor\", \"department\": null, \"all_semesters\": {\"1\": \"spring\", \"2\": \"summer\", \"3\": \"fall\", \"4\": \"intermittent\"}, \"current_year\": 2015, \"all_campuses\": {\"1\": \"doha\", \"2\": \"pittsburgh\"}}"
+        }
+      ]
+    },
+    {
+      "_postman_id": "fa10f582-4ea7-b94d-c2b9-74781122c8a7",
+      "name": "catalog:important_dates",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+              "",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              " ",
+              "response_fields = ['semesters', 'dates', 'label', 'day', 'is_range', 'month']",
+              "tests[\"Has response fields\"] = true",
+              "for(var i=0, len=response_fields.length; i < len; i++){",
+              "    if (!responseBody.has(response_fields[i])) {",
+              "        tests [\"list\"] = false ",
+              "    }",
+              "}",
+              "",
+              "",
+              "",
+              "var data = JSON.parse(responseBody);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "http://127.0.0.1:8001/catalog/importantdates",
+        "method": "GET",
+        "body": {
+          "mode": "formdata"
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "id": "1b5cff63-d610-a122-c380-2d54a7e1b526",
+          "name": "selma get init data",
+          "originalRequest": {
+            "url": "http://127.0.0.1:8001/catalog/importantdates",
+            "method": "GET",
+            "body": {
+              "mode": "formdata"
+            },
+            "description": ""
+          },
+          "status": "OK",
+          "code": "200",
+          "_postman_previewlanguage": "javascript",
+          "_postman_previewtype": "html",
+          "header": [
+            {
+              "name": "Content-Type",
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": ""
+            },
+            {
+              "name": "Date",
+              "key": "Date",
+              "value": "Thu, 02 Jul 2015 16:15:02 GMT",
+              "description": ""
+            },
+            {
+              "name": "Server",
+              "key": "Server",
+              "value": "WSGIServer/0.1 Python/2.7.6",
+              "description": ""
+            },
+            {
+              "name": "Vary",
+              "key": "Vary",
+              "value": "Cookie",
+              "description": ""
+            },
+            {
+              "name": "X-Frame-Options",
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN",
+              "description": ""
+            }
+          ],
+          "cookie": [
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/planner/getinitdata",
+              "secure": "false",
+              "session": "true",
+              "value": "GA1.4.1697518181.143<br/>2461323",
+              "key": "_ga"
+            },
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/planner/getinitdata",
+              "secure": "false",
+              "session": "true",
+              "value": "R670ZjJwmCfgd9PDmvEx<br/>trA4nWBxwbkV",
+              "key": "csrftoken"
+            },
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/planner/getinitdata",
+              "secure": "false",
+              "session": "true",
+              "value": "znsbjvm5skopqvl7fl2e<br/>2y8e9xiloryd",
+              "key": "sessionid"
+            },
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/planner",
+              "secure": "false",
+              "session": "true",
+              "value": "GA1.4.1697518181.143<br/>2461323",
+              "key": "_ga"
+            },
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/planner",
+              "secure": "false",
+              "session": "true",
+              "value": "s8s1A7miyvp5HC5kPB5i<br/>vPxnH12IH7t4",
+              "key": "csrftoken"
+            },
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/planner",
+              "secure": "false",
+              "session": "true",
+              "value": "1p5q9079mdxt3m0z626m<br/>7u6lpjb9c707",
+              "key": "sessionid"
+            },
+            {
+              "expires": "Thu Jun 30 2016 08:03:50 GMT+0000 (UTC)",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/",
+              "secure": "false",
+              "session": "false",
+              "value": "7znf2eHEFlNFlZagz2dE<br/>W3GzrMH58kAF",
+              "key": "csrftoken"
+            },
+            {
+              "expires": "Thu Jul 16 2015 08:03:50 GMT+0000 (UTC)",
+              "hostOnly": "true",
+              "httpOnly": "true",
+              "domain": "127.0.0.1",
+              "path": "/",
+              "secure": "false",
+              "session": "false",
+              "value": "w2dfz6sabb998z2oyxc1<br/>9kd42hav7fc6",
+              "key": "sessionid"
+            },
+            {
+              "expires": "Sat Jul 01 2017 11:37:51 GMT+0000 (UTC)",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/",
+              "secure": "false",
+              "session": "false",
+              "value": "GA1.1.1697518181.143<br/>2461323",
+              "key": "_ga"
+            },
+            {
+              "expires": "Sat Jul 01 2017 11:38:03 GMT+0000 (UTC)",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/",
+              "secure": "false",
+              "session": "false",
+              "value": "96992031.1697518181.<br/>1432461323.143583708<br/>4.1435837084.1",
+              "key": "__utma"
+            },
+            {
+              "expires": "Invalid Date",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/",
+              "secure": "false",
+              "session": "true",
+              "value": "96992031",
+              "key": "__utmc"
+            },
+            {
+              "expires": "Thu Dec 31 2015 23:38:03 GMT+0000 (UTC)",
+              "hostOnly": "true",
+              "httpOnly": "false",
+              "domain": "127.0.0.1",
+              "path": "/",
+              "secure": "false",
+              "session": "false",
+              "value": "96992031.1435837084.<br/>1.1.utmcsr=(direct)|<br/>utmccn=(direct)|utmc<br/>md=(none)",
+              "key": "__utmz"
+            }
+          ],
+          "responseTime": "86",
+          "body": "{\"username\": \"selmal\", \"first_name\": \"Selma\", \"default_campus\": 1, \"default_programs\": null, \"current_semester\": 2, \"nearest_date\": {\"text\": \"Examinations\", \"end_date\": null, \"full_date\": \"2016-06-28\"}, \"units_range\": [1, 12], \"logical_years\": {\"1\": \"Freshman\", \"2\": \"Sophomore\", \"3\": \"Junior\", \"4\": \"Senior\", \"5\": \"Fifth Year\"}, \"last_name\": \"Limam Mansar\", \"role\": \"advisor\", \"department\": null, \"all_semesters\": {\"1\": \"spring\", \"2\": \"summer\", \"3\": \"fall\", \"4\": \"intermittent\"}, \"current_year\": 2015, \"all_campuses\": {\"1\": \"doha\", \"2\": \"pittsburgh\"}}"
+        }
+      ]
+    }
+  ]
+}
